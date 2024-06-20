@@ -1,0 +1,12 @@
+﻿{
+  "Name": "prioriposgui.exe",
+  "Type": "App",
+  "Id": "-zFjnzNt20iklA_5EJG3EA",
+  "Reference": "fBhsJsaXJ068uahH-oq14Q/-zFjnzNt20iklA_5EJG3EA",
+  "Created": "2024-06-18T11:05:03.4405059Z",
+  "Updated": "2024-06-18T11:05:03.4405059Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

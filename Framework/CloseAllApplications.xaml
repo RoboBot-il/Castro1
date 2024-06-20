@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850,978" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="859,797" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -97,33 +97,59 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="654,913" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="514,652" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sco:Collection(x:String)" Name="CheckStatusApp" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="592,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing application&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,621" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="452,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing application&quot;]" />
+    <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" CommandText="$process = Get-Process -Name PrioriPOSGUI -ErrorAction SilentlyContinue;if($process){return '1'} else {return '0'}" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="452,111" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_5" IsScript="True" Output="[CheckStatusApp]" PowerShellProcess="PowerShellCore">
+      <ui:InvokePowerShell.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+      </ui:InvokePowerShell.Parameters>
+      <ui:InvokePowerShell.PowerShellVariables>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokePowerShell.PowerShellVariables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokePowerShell>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,238" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="556,519" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NCheckState DisplayName="Check App State 'מק&quot;ט'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,434" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
-            <uix:NCheckState.IfExists>
-              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <If Condition="[CheckStatusApp(0)=&quot;1&quot;]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" CommandText="TASKKILL /F /IM  PrioriPOSGUI.exe" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="388,104" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" IsScript="True" PowerShellProcess="PowerShellCore">
+                <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" CommandText="TASKKILL /F /IM  PrioriPOSGUI.exe" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="354,102" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_6" IsScript="True" PowerShellProcess="PowerShellCore">
                   <ui:InvokePowerShell.Parameters>
                     <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                   </ui:InvokePowerShell.Parameters>
@@ -132,26 +158,17 @@
                   </ui:InvokePowerShell.PowerShellVariables>
                 </ui:InvokePowerShell>
               </Sequence>
-            </uix:NCheckState.IfExists>
-            <uix:NCheckState.IfNotExists>
-              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Sequence>
-            </uix:NCheckState.IfNotExists>
-            <uix:NCheckState.Target>
-              <uix:TargetAnchorable CVScreenId="9ed57cde-f4ec-4cfa-ab4a-04e4114b38df" CvElementArea="598, 5, 45, 44" CvType="Icon" DesignTimeRectangle="600, 6, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='btnMarketGate' /&gt;&lt;ctrl name='מק&amp;quot;ט' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='btnMarketGate' /&gt;&lt;ctrl name='מק&amp;quot;ט' role='push button' automationid='' check:text='מק&amp;quot;ט' /&gt;" Guid="987b764a-e2c8-4de6-a5c4-3f147eeb1353" ImageBase64="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" InformativeScreenshot="badd1d25526b2a152050210bcbcd4184.png" ScopeSelectorArgument="&lt;wnd app='prioriposgui.exe' ctrlname='TransactionForm' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
-                <uix:TargetAnchorable.Anchors>
-                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                    <uix:Target CVScreenId="9ed57cde-f4ec-4cfa-ab4a-04e4114b38df" CvElementArea="530, 7, 45, 40" CvType="Icon" DesignTimeRectangle="532, 6, 40, 40" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='btnPrioriRate' /&gt;&lt;ctrl name='מק&amp;quot;ט' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='btnPrioriRate' /&gt;&lt;ctrl name='מק&amp;quot;ט' role='push button' automationid='' check:text='מק&amp;quot;ט' /&gt;" Guid="f3820b3e-b231-403f-acb7-a1bc283fb593" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVVSURBVFhH7ZhtTFNXGMcpFMqLiEjHm4BOXhVBBIThAhFlM5kKuM1Nu0Re7FYGtLz0jVKcOlyccZnOORaTqXFZHGIySFAJCgX00z5q4j6wiZnObDELy3TRCch/z7nQUMqhtKXMmfHhl3vvOeee8+vpc557z3VDrxueJ+aF55p54blmXniu+f8J/3YpAv2tSfixbZVd9Leuwp32WIz0iLn9zcSshIdNntie+xaCAnUIWqQh1FbHWquysfPMRAV+bgnEaI+I268tnBa+eWYJyra9DV/vWri56QjNOFqIRHpEBquwc5MCL6XUTKkXe2iQnaxA20dJDs+0U8J/dEqxYmkFXstWYl/plklCTPa9rTIMnAvDk24/nGwstKhnP0aH13NlONH4JkKD6nCtaSX1af9MOyw82uOGQ2U5CF6sxt32pRi84A9pAJtlrSAl9qjFmX0b8H7BG7jTEoDTB/IthFm9EacMWcBVCTamyiHL24GhLg/uWDycEBahflcG4iL34GnfAuFaliezkNLDU6xDuLQct84G4FQjE9aP12nh76vB7x0hQl9n9m9BXpoMf1+ZQ2HG18YcBAUYcfVYHJ6aROg8korAAMW41Bjh0koMfLtokrBIpMU7r5ZitNcDg+2+2JRRjON12/C0x507Dg+nhB91LUD+y6WIj6zCIcV69J+PR2pCpU1hkUgNKWWNmy1paN67Fq+k0/1RtehvjuKOMR1OCTMedPjgk+pCEjMiKrQawYEsG0wVHothPdzdaynuy7FyWTUWL6yj2a3AvfblDqc2p4UF+jxxvyMcatl2+EiqSYxSlriKZlODkMBK9ByNRoN8J5Wz+GZ1KqxNUKDv+GpKZ178PmdgdsLj7CstoBk00EI8QDNtEGbYw11H53os9KshUQ0aqipoMdK/EWKgkPLl9mMPLhH+4Wwc9hZvovwcgnMfrseyUC0kkgphVkOkCnxzcCsedvqjqWYdTqhzadF5cvuxB5cIW8IywI3TUYgOVwqhcES5kR7h5r/f8UexNS4XZjy+LEZW4m4S1qP70wRuG2dxsbAIT0x+GOyQIjVOLszw+f0ZFLP+tEDtfzjYwqXCPzVHUNpSIZTSl6dYLSy+QH8VpbgadH6Zzb3HUVwq/P1XcZQd2DuFJewpZ8CODYXcexzFpcK3W4KRHl+BF8NUhHIcFS3AWnxRncO9x1FmLcyeVI96gvGwO5wIw4OuMPx5JZSOk/nLFEawNuEY6fXh9mUPsxfu88FhowIrow0CyXF6Lokx9UL9mhUf4G5HCrcve5h9SFzzQ1K0Hr6+cmL3tPj5yQW8JTrcak/j92UHrhFevocW1sSLD5+xRSjxqsfABRcK329biOaDuTgg32yTj8s243JTJh6bgrA6psFKjsccCV8/GUqpib3AjL1hTcCuLdEjZkk57n4XgTWx9XTNF7Qul3gZXCt841QICZu3NNZY/gAtYiMq8EurWdhaztzOsmxCeMTkjuFuD7tguxqz3zTCdVMGmoq1MK/NVJjw7YsZOKrMgSK/kDartikvLIDpSMyzE/aWGDFwMQsb00vomo1jDjH2b1iGHENPu2wdPlNmPnvhvPRiujaLWobO5DBiO/BjKpcIa/4lYa1t4esnmTDLEuYbzR1aMlYeG1EpCKfEGi3KbeMtacDtS+soJIromgnz2k2MxT5r2QyJe61BqC4pgaqoiCi2QREaVTvo3fcFHNawtjO1L4ZyVxHU8nfxa2cyPjdshbKIjcNva4a59DYlTS/MXmaGuj3tgn29ZO3ZkVfPg22X2IeTYZMYQ3TOa2MNS4FmvynC/3Xmheea50zYDf8ARRCezSVuON0AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, CV" />
-                  </scg:List>
-                </uix:TargetAnchorable.Anchors>
-              </uix:TargetAnchorable>
-            </uix:NCheckState.Target>
-          </uix:NCheckState>
+            </If.Else>
+          </If>
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>

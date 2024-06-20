@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>849,1823</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>859,2543</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="592,1758" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="646,2478" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="umm:Office365Message" Name="GetCurrentEmail" />
     </Sequence.Variables>
@@ -138,8 +138,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Get Transaction Item" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get the transaction item&quot;]" />
-    <ui:RetryScope DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="530,578" sap2010:WorkflowViewState.IdRef="RetryScope_4">
+    <ui:LogMessage DisplayName="Log Message Get Transaction Item" sap:VirtualizedContainerService.HintSize="584,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get the transaction item&quot;]" />
+    <ui:RetryScope DisplayName="Retry Get transaction item" sap:VirtualizedContainerService.HintSize="584,578" sap2010:WorkflowViewState.IdRef="RetryScope_4">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="438,371" sap2010:WorkflowViewState.IdRef="TryCatch_2">
@@ -202,29 +202,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <If Condition="[out_TransactionItem IsNot Nothing]" sap:VirtualizedContainerService.HintSize="530,697" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[out_TransactionItem IsNot Nothing]" sap:VirtualizedContainerService.HintSize="584,1417" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,433" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="550,1153" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch Use Outlook 365" sap:VirtualizedContainerService.HintSize="434,345" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="Try Catch Use Outlook 365" sap:VirtualizedContainerService.HintSize="488,1065" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <TryCatch.Try>
-              <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="548,1004" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_1" UseConnectionService="True">
+              <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,814" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_1" UseConnectionService="True">
                 <umab:ExchangeApplicationCard.Body>
                   <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Exchange" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,780" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,590" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[out_TransactionItem.SpecificContent.Values(0).ToString]" sap:VirtualizedContainerService.HintSize="452,230" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_3" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
+                      <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[out_TransactionItem.SpecificContent.Values(0).ToString]" sap:VirtualizedContainerService.HintSize="354,230" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_3" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
                         <umam:GetEmailByIdConnections.MailboxBackup>
                           <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
                             <usau:BackupSlot.BackupValues>
@@ -233,39 +233,22 @@
                           </usau:BackupSlot>
                         </umam:GetEmailByIdConnections.MailboxBackup>
                       </umam:GetEmailByIdConnections>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,462" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,360" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <umam:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Transaction Completed" BrowserFolderId="AAMkADkwZTdhOWFkLWQyMzItNGMzYy05ZmI1LWEwN2FjN2Q1ZTAxNwAuAAAAAAC9fLjHScgjRKeHQj07U2vQAQDsTUSjYsV0QLqpGzuJyOe4AAABkgI4AAA=" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Move Email" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_2" Result="[GetCurrentEmail]" SelectionMode="Browse" UseConnectionService="True" UseSharedMailbox="False">
-                              <umam:MoveEmailConnections.FolderIdBackup>
-                                <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" StoredValue="Browse">
-                                  <usau:BackupSlot.BackupValues>
-                                    <scg:Dictionary x:TypeArguments="umame:ItemSelectionMode, scg:List(x:Object)" />
-                                  </usau:BackupSlot.BackupValues>
-                                </usau:BackupSlot>
-                              </umam:MoveEmailConnections.FolderIdBackup>
-                              <umam:MoveEmailConnections.MailboxBackup>
-                                <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
-                                  <usau:BackupSlot.BackupValues>
-                                    <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
-                                  </usau:BackupSlot.BackupValues>
-                                </usau:BackupSlot>
-                              </umam:MoveEmailConnections.MailboxBackup>
-                            </umam:MoveEmailConnections>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
+                      <umam:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Transaction Completed" BrowserFolderId="AAMkADkwZTdhOWFkLWQyMzItNGMzYy05ZmI1LWEwN2FjN2Q1ZTAxNwAuAAAAAAC9fLjHScgjRKeHQj07U2vQAQDsTUSjYsV0QLqpGzuJyOe4AAABkgI4AAA=" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Move Email" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_3" Result="[GetCurrentEmail]" SelectionMode="Browse" UseConnectionService="True" UseSharedMailbox="False">
+                        <umam:MoveEmailConnections.FolderIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umame:ItemSelectionMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umam:MoveEmailConnections.FolderIdBackup>
+                        <umam:MoveEmailConnections.MailboxBackup>
+                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umam:MoveEmailConnections.MailboxBackup>
+                      </umam:MoveEmailConnections>
                     </Sequence>
                   </ActivityAction>
                 </umab:ExchangeApplicationCard.Body>
@@ -283,10 +266,10 @@
               </umab:ExchangeApplicationCard>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
