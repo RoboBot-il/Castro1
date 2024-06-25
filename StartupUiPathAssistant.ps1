@@ -1,0 +1,1 @@
+start-process -filepath "C:\Users\robot1\AppData\Local\Programs\UiPath\Studio\UiPathAssistant\UiPath.Assistant.exe" -Verb RunAs
