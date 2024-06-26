@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>849,3297</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>849,3124</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="608,3232" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="608,3059" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -126,21 +126,21 @@
     <ui:SetAsset TimeoutMS="{x:Null}" AssetName="FailureCount" DisplayName="Set Asset" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="546,226" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[0]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Reset failure counter&quot;]" />
     <ui:WriteCell Cell="B6" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="546,148" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Settings" Text="False" WorkbookPath="C:\Users\robot1\Documents\UiPath\Execute\Data\Config.xlsx" />
-    <If Condition="[Not String.IsNullOrEmpty(UiPathEventObjectId)]" sap:VirtualizedContainerService.HintSize="546,1606" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not String.IsNullOrEmpty(UiPathEventObjectId)]" sap:VirtualizedContainerService.HintSize="546,1433" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1160" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,1245" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_2" UseConnectionService="True">
+          <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,1072" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_2" UseConnectionService="True">
             <umab:ExchangeApplicationCard.Body>
               <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Exchange" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,998" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,825" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="umm:Office365Message" Name="GetCurrentEmail" />
                   </Sequence.Variables>
@@ -149,7 +149,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[UiPathEventObjectId]" sap:VirtualizedContainerService.HintSize="354,230" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_1" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
+                  <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[UiPathEventObjectId]" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_1" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
                     <umam:GetEmailByIdConnections.MailboxBackup>
                       <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
                         <usau:BackupSlot.BackupValues>
@@ -157,6 +157,12 @@
                         </usau:BackupSlot.BackupValues>
                       </usau:BackupSlot>
                     </umam:GetEmailByIdConnections.MailboxBackup>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </umam:GetEmailByIdConnections>
                   <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Mark Email as Read or Unread" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,235" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAsReadUnread="Read" UseConnectionService="True" />
                   <umam:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Start Process" BrowserFolderId="AAMkADkwZTdhOWFkLWQyMzItNGMzYy05ZmI1LWEwN2FjN2Q1ZTAxNwAuAAAAAAC9fLjHScgjRKeHQj07U2vQAQDsTUSjYsV0QLqpGzuJyOe4AAATkWjLAAA=" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Move Email" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,281" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" SelectionMode="Browse" UseConnectionService="True" UseSharedMailbox="False">
