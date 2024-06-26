@@ -33,7 +33,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1243,733</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>689,693</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -674,9 +674,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" DisplayName="Get Current Email" sap:VirtualizedContainerService.HintSize="692,2343" sap2010:WorkflowViewState.IdRef="State_5">
+            <State x:Name="__ReferenceID2" DisplayName="Get Current Email" sap:VirtualizedContainerService.HintSize="692,2348" sap2010:WorkflowViewState.IdRef="State_5">
               <State.Entry>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="646,1955" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="646,1960" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -684,7 +684,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence sap:VirtualizedContainerService.HintSize="608,1727" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                    <Sequence sap:VirtualizedContainerService.HintSize="608,1732" sap2010:WorkflowViewState.IdRef="Sequence_69">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="FilterByID" />
                         <Variable x:TypeArguments="snm:MailMessage" Name="TestMessage" />
@@ -695,43 +695,60 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="546,114" sap2010:WorkflowViewState.IdRef="Assign_56">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[UiPathEventObjectId]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">AAMkADkwZTdhOWFkLWQyMzItNGMzYy05ZmI1LWEwN2FjN2Q1ZTAxNwBGAAAAAAC9fLjHScgjRKeHQj07U2vQBwDsTUSjYsV0QLqpGzuJyOe4AAAAAAEMAADsTUSjYsV0QLqpGzuJyOe4AAAdPEnAAAA=</InArgument>
-                        </Assign.Value>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Assign>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Start get current email&quot;]" />
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Info" Message="[&quot;Email ID: &quot;+UiPathEventObjectId]" />
-                      <If Condition="[UiPathEventObjectId IsNot Nothing]" sap:VirtualizedContainerService.HintSize="546,1179" sap2010:WorkflowViewState.IdRef="If_17">
-                        <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,817" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_90">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,729" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_9" UseConnectionService="True">
+                            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_56">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[UiPathEventObjectId]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">AAMkADkwZTdhOWFkLWQyMzItNGMzYy05ZmI1LWEwN2FjN2Q1ZTAxNwBGAAAAAAC9fLjHScgjRKeHQj07U2vQBwDsTUSjYsV0QLqpGzuJyOe4AAAAAAEMAADsTUSjYsV0QLqpGzuJyOe4AAAdPEnAAAA=</InArgument>
+                              </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Assign>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Start get current email&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Info" Message="[&quot;Email ID: &quot;+UiPathEventObjectId]" />
+                      <If Condition="[UiPathEventObjectId IsNot Nothing]" sap:VirtualizedContainerService.HintSize="546,1241" sap2010:WorkflowViewState.IdRef="If_17">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,879" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,791" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_9" UseConnectionService="True">
                               <umab:ExchangeApplicationCard.Body>
                                 <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Exchange" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,482" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,544" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[UiPathEventObjectId]" sap:VirtualizedContainerService.HintSize="354,199" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_12" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
+                                    <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Get Email by ID" EmailId="[UiPathEventObjectId]" sap:VirtualizedContainerService.HintSize="354,230" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_12" Result="[GetCurrentEmail]" UseConnectionService="True" UseSharedMailbox="False">
                                       <umam:GetEmailByIdConnections.MailboxBackup>
                                         <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
                                           <usau:BackupSlot.BackupValues>
@@ -740,7 +757,7 @@
                                         </usau:BackupSlot>
                                       </umam:GetEmailByIdConnections.MailboxBackup>
                                     </umam:GetEmailByIdConnections>
-                                    <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Mark Email as Read or Unread" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_4" MarkAsReadUnread="Read" UseConnectionService="True" />
+                                    <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Mark Email as Read or Unread" Email="[GetCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,226" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_4" MarkAsReadUnread="Read" UseConnectionService="True" />
                                   </Sequence>
                                 </ActivityAction>
                               </umab:ExchangeApplicationCard.Body>
