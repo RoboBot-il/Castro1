@@ -3,11 +3,12 @@
     <x:Property Name="in_OrchestratorQueueFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
     <x:Property Name="io_StopProcess" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="io_BusinessException" Type="InArgument(ui:BusinessRuleException)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>849,1710</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>849,1668</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckTransactionFailures_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,7 +125,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckTransactionFailures" sap:VirtualizedContainerService.HintSize="654,1525" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckTransactionFailures" sap:VirtualizedContainerService.HintSize="654,1603" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="QueueItems" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -137,7 +138,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="592,1389" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence sap:VirtualizedContainerService.HintSize="592,1467" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,15 +149,15 @@
           <OutArgument x:TypeArguments="x:Int32">[FailureCount]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <If Condition="[FailureCount=2]" sap:VirtualizedContainerService.HintSize="530,1094" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[FailureCount=2 Or io_BusinessException.Message.Contains(&quot;בקשת האשראי נשלחה ולא התקבלה תגובה&quot;)]" sap:VirtualizedContainerService.HintSize="530,1172" sap2010:WorkflowViewState.IdRef="If_7">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,514" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,592" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There are 3 Consecutive transaction that failed, The process is disabled&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There are 3 Consecutive transaction that failed, The process is disabled or network connection problem&quot;]" />
             <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_11">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[io_StopProcess]</OutArgument>
@@ -165,7 +166,7 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:WriteCell Cell="B6" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Settings" Text="True" WorkbookPath="Data\Config.xlsx" />
+            <ui:SetAsset TimeoutMS="{x:Null}" AssetName="StopProcess" DisplayName="Set Asset" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="434,217" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[True]" />
           </Sequence>
         </If.Then>
         <If.Else>
