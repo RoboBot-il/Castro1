@@ -122,6 +122,11 @@
       <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
       <x:String>System.Management.Automation</x:String>
       <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Core.Activities.DateModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>UiPath.Activities.System.Date</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -221,32 +226,39 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Add Queue Items" sap:VirtualizedContainerService.HintSize="738,2455" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Add Queue Items" sap:VirtualizedContainerService.HintSize="658,2661" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <Sequence sap:VirtualizedContainerService.HintSize="692,2094" sap2010:WorkflowViewState.IdRef="Sequence_105">
+        <Sequence sap:VirtualizedContainerService.HintSize="612,2300" sap2010:WorkflowViewState.IdRef="Sequence_105">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="630,2006" sap2010:WorkflowViewState.IdRef="Sequence_104">
+          <Sequence sap:VirtualizedContainerService.HintSize="550,2212" sap2010:WorkflowViewState.IdRef="Sequence_104">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="568,114" sap2010:WorkflowViewState.IdRef="Assign_60">
+            <Assign sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Assign_60">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[SubjectCurrentEmail]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[OrderNumber]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[GetCurrentEmail.Subject]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568,173" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;OrderNumber: &quot;+SubjectCurrentEmail]" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="568,1608" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,173" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;OrderNumber: &quot;+OrderNumber]" />
+            <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" sap2010:Annotation.AnnotationText="Check if exist Order Number" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="488,206" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="Orders" Reference="[OrderNumber]" Result="[OrderNumberExist]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetQueueItems>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,1608" sap2010:WorkflowViewState.IdRef="TryCatch_10">
               <TryCatch.Try>
-                <If Condition="[(Not String.IsNullOrEmpty(SubjectCurrentEmail)) And (SubjectCurrentEmail.Contains(&quot;SO&quot;) Or SubjectCurrentEmail.IsNumeric)]" sap:VirtualizedContainerService.HintSize="530,1357" sap2010:WorkflowViewState.IdRef="If_21">
+                <If Condition="[(Not String.IsNullOrEmpty(OrderNumber) And OrderNumberExist(0) Is Nothing) And (OrderNumber.Contains(&quot;SO&quot;) Or OrderNumber.IsNumeric)]" sap:VirtualizedContainerService.HintSize="450,1357" sap2010:WorkflowViewState.IdRef="If_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,14 +266,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,845" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,845" sap2010:WorkflowViewState.IdRef="Sequence_101">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_20">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="CommentOut_20">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="592,613" sap2010:WorkflowViewState.IdRef="Sequence_100">
                             <sap:WorkflowViewStateService.ViewState>
@@ -283,7 +295,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[SubjectCurrentEmail]" sap:VirtualizedContainerService.HintSize="354,83" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[GetCurrentEmail.Subject]" IsBuilderTabModified="False" Pattern="\bSO[0-9].*[0-9]" RegexOption="IgnoreCase, Compiled" />
+                                  <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[OrderNumber]" sap:VirtualizedContainerService.HintSize="354,83" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[GetCurrentEmail.Subject]" IsBuilderTabModified="False" Pattern="\bSO[0-9].*[0-9]" RegexOption="IgnoreCase, Compiled" />
                                 </Sequence>
                               </If.Then>
                               <If.Else>
@@ -295,7 +307,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_59">
                                     <Assign.To>
-                                      <OutArgument x:TypeArguments="x:String">[SubjectCurrentEmail]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String">[OrderNumber]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:String">[GetCurrentEmail.Subject]</InArgument>
@@ -313,8 +325,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:BuildDataTable DataTable="[dt_TransactionData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Order_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{UiPathEventObjectId,SubjectCurrentEmail,SubjectCurrentEmail}]" DataTable="[dt_TransactionData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                      <ui:BuildDataTable DataTable="[dt_TransactionData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Order_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{UiPathEventObjectId,OrderNumber,OrderNumber}]" DataTable="[dt_TransactionData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -322,7 +334,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:AddDataRow>
-                      <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items" FolderPath="[in_OrchestratorQueueFolder]" sap:VirtualizedContainerService.HintSize="434,226" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_5" QueueItemsDataTable="[dt_TransactionData]" QueueName="[in_OrchestratorQueueName]" Result="[ResultBulkAddQueueItems]">
+                      <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items" FolderPath="[in_OrchestratorQueueFolder]" sap:VirtualizedContainerService.HintSize="354,226" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_5" QueueItemsDataTable="[dt_TransactionData]" QueueName="[in_OrchestratorQueueName]" Result="[ResultBulkAddQueueItems]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -330,7 +342,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:BulkAddQueueItems>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Info" Message="[&quot;Bulk Add Queue Items&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Info" Message="[&quot;Bulk Add Queue Items&quot;]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -347,7 +359,7 @@
                 </If>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="534,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="454,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -405,8 +417,9 @@
         </Transition>
       </State.Transitions>
       <State.Variables>
-        <Variable x:TypeArguments="x:String" Name="SubjectCurrentEmail" />
+        <Variable x:TypeArguments="x:String" Name="OrderNumber" />
         <Variable x:TypeArguments="sd:DataTable" Name="ResultBulkAddQueueItems" />
+        <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="OrderNumberExist" />
       </State.Variables>
     </State>
     <x:Reference>__ReferenceID0</x:Reference>
