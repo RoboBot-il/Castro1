@@ -226,15 +226,15 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Add Queue Items" sap:VirtualizedContainerService.HintSize="754,3219" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Add Queue Items" sap:VirtualizedContainerService.HintSize="754,3778" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <Sequence sap:VirtualizedContainerService.HintSize="708,2858" sap2010:WorkflowViewState.IdRef="Sequence_105">
+        <Sequence sap:VirtualizedContainerService.HintSize="708,3417" sap2010:WorkflowViewState.IdRef="Sequence_105">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="646,2770" sap2010:WorkflowViewState.IdRef="Sequence_104">
+          <Sequence sap:VirtualizedContainerService.HintSize="646,3329" sap2010:WorkflowViewState.IdRef="Sequence_104">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,16 +249,16 @@
               </Assign.Value>
             </Assign>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="584,173" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;OrderNumber: &quot;+OrderNumber]" />
-            <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" sap2010:Annotation.AnnotationText="Check if exist Order Number" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="584,206" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="Orders" Reference="[OrderNumber]" Result="[OrderNumberExist]">
+            <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" sap2010:Annotation.AnnotationText="Check if exist Order Number" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="584,206" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New, Successful" QueueName="Orders" Reference="[OrderNumber]" Result="[OrderNumberExist]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetQueueItems>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,2166" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,2725" sap2010:WorkflowViewState.IdRef="TryCatch_10">
               <TryCatch.Try>
-                <If Condition="[(Not String.IsNullOrEmpty(OrderNumber) And OrderNumberExist(0) Is Nothing) And (OrderNumber.Contains(&quot;SO&quot;) Or OrderNumber.IsNumeric)]" sap:VirtualizedContainerService.HintSize="546,1915" sap2010:WorkflowViewState.IdRef="If_21">
+                <If Condition="[(Not String.IsNullOrEmpty(OrderNumber) And OrderNumberExist(0) Is Nothing) And (OrderNumber.Contains(&quot;SO&quot;) Or OrderNumber.IsNumeric)]" sap:VirtualizedContainerService.HintSize="546,2474" sap2010:WorkflowViewState.IdRef="If_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,7 +346,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,932" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,1491" sap2010:WorkflowViewState.IdRef="Sequence_95">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -380,7 +380,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_10" UseConnectionService="True">
+                      <umab:ExchangeApplicationCard ApplicationId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" ConnectionAccountName="robot1@castro.co.il" ConnectionId="8043f633-38b9-431a-b3d2-d6152eb4ebc9" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,616" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_10" UseConnectionService="True">
                         <umab:ExchangeApplicationCard.Body>
                           <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                             <ActivityAction.Argument>
@@ -418,7 +418,7 @@
                         </umab:ExchangeApplicationCard.EmailAddress>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
