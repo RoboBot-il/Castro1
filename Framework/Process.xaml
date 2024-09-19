@@ -183,7 +183,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Process&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;התחלת התהליך&quot;]" />
     <Sequence DisplayName="Assets" sap:VirtualizedContainerService.HintSize="638,750" sap2010:WorkflowViewState.IdRef="Sequence_24">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -250,7 +250,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,173" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;הפעלת מערכת קופה&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,173" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;פתיחת מערכת קופה&quot;]" />
               <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="656,1906" sap2010:WorkflowViewState.IdRef="TryCatch_27">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -313,7 +313,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Info" Message="[&quot;Close and start App&quot;]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Info" Message="[&quot;סגירה ופתיחת מערכת קופה&quot;]" />
                                 <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" CommandText="TASKKILL /F /IM  PrioriPOSGUI.exe" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_30" IsScript="True" PowerShellProcess="PowerShellCore">
                                   <ui:InvokePowerShell.Parameters>
                                     <scg:Dictionary x:TypeArguments="x:String, InArgument" />
@@ -340,7 +340,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;Start App&quot;]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;פתיחת מערכת קופה&quot;]" />
                                 <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="cd\;cd .\prioripos\;.\PrioriPOSGUI.exe" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="354,102" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_32" IsScript="True" PowerShellProcess="PowerShellCore">
                                   <ui:InvokePowerShell.Parameters>
                                     <scg:Dictionary x:TypeArguments="x:String, InArgument" />
@@ -781,14 +781,14 @@
                             <av:PointCollection x:Key="ConnectorLocation">690,385 690,425</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="SKU &amp; Order Number" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_304">
+                        <Sequence DisplayName="SKU &amp; Order Number" sap:VirtualizedContainerService.HintSize="884,5992" sap2010:WorkflowViewState.IdRef="Sequence_304">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="822,173" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Info" Message="[&quot;עמוד מקט ומספר הזמנה&quot;]" />
-                          <TryCatch DisplayName="Try Catch SKU &amp; Order Number" sap:VirtualizedContainerService.HintSize="822,5845" sap2010:WorkflowViewState.IdRef="TryCatch_22">
+                          <TryCatch DisplayName="Try Catch SKU &amp; Order Number" sap:VirtualizedContainerService.HintSize="822,5731" sap2010:WorkflowViewState.IdRef="TryCatch_22">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -796,20 +796,20 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: prioriposgui.exe" sap:VirtualizedContainerService.HintSize="784,5572" sap2010:WorkflowViewState.IdRef="NApplicationCard_40" ScopeGuid="8cbc71ac-ac97-459c-8bbb-502098f6db86" Version="V2">
+                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: prioriposgui.exe" sap:VirtualizedContainerService.HintSize="784,5458" sap2010:WorkflowViewState.IdRef="NApplicationCard_40" ScopeGuid="8cbc71ac-ac97-459c-8bbb-502098f6db86" Version="V2">
                                 <uix:NApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="750,5281" sap2010:WorkflowViewState.IdRef="Sequence_301">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="750,5167" sap2010:WorkflowViewState.IdRef="Sequence_301">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,5191" sap2010:WorkflowViewState.IdRef="Sequence_285">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,5077" sap2010:WorkflowViewState.IdRef="Sequence_285">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="Message" />
                                           <Variable x:TypeArguments="x:String" Name="OrderNumber" />
@@ -904,122 +904,6 @@
                                             </Catch>
                                           </TryCatch.Catches>
                                         </TryCatch>
-                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="CommentOut_26">
-                                          <ui:CommentOut.Body>
-                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_395">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <uix:NCheckState DisplayName="Check App State 'WindowsForms10.RichEdit…'" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NCheckState_57" ScopeIdentifier="8cbc71ac-ac97-459c-8bbb-502098f6db86" Version="V3">
-                                                <uix:NCheckState.IfExists>
-                                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,333" sap2010:WorkflowViewState.IdRef="Sequence_393">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SKU'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="388,243" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="8cbc71ac-ac97-459c-8bbb-502098f6db86" Text="[SKU + &quot;[k(Enter)]&quot;]" Timeout="10" Version="V3">
-                                                      <uix:NTypeInto.Target>
-                                                        <uix:TargetAnchorable DesignTimeRectangle="579, 175, 125, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' /&gt;" Guid="723d7c42-7085-448e-bd2a-089b27206164" InformativeScreenshot="8fb8ff2441ecab2892bbaaec696e987e.png" ScopeSelectorArgument="&lt;wnd app='prioriposgui.exe' ctrlname='TransactionForm' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                          <uix:TargetAnchorable.Anchors>
-                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                              <uix:Target CVScreenId="82db5ff8-56d1-4809-9cd8-d38a923ac6cf" CvTextArea="624, 147, 36, 18" CvTextArgument="U&quot;7" CvType="Text" DesignTimeRectangle="624, 147, 36, 18" ElementType="Text" Guid="0508fc24-eea4-4d4c-b4d6-817f0d3291cd" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                                            </scg:List>
-                                                          </uix:TargetAnchorable.Anchors>
-                                                        </uix:TargetAnchorable>
-                                                      </uix:NTypeInto.Target>
-                                                    </uix:NTypeInto>
-                                                  </Sequence>
-                                                </uix:NCheckState.IfExists>
-                                                <uix:NCheckState.IfNotExists>
-                                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_394">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Throw Exception="[new SystemException(&quot;לא נכנס לעמוד 'מקט'&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_94" />
-                                                  </Sequence>
-                                                </uix:NCheckState.IfNotExists>
-                                                <uix:NCheckState.Target>
-                                                  <uix:TargetAnchorable DesignTimeRectangle="579, 175, 125, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' /&gt;" Guid="999c70bc-3d90-4194-bf88-3b9301943505" InformativeScreenshot="bc6161e5a4dc1763544dd5e6bd6fb245.png" ScopeSelectorArgument="&lt;wnd app='prioriposgui.exe' ctrlname='TransactionForm' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                                                </uix:NCheckState.Target>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </uix:NCheckState>
-                                            </Sequence>
-                                          </ui:CommentOut.Body>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:CommentOut>
-                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="CommentOut_25">
-                                          <ui:CommentOut.Body>
-                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_392">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <uix:NCheckState DisplayName="Check App State 'מק&quot;ט'" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NCheckState_55" ScopeIdentifier="8cbc71ac-ac97-459c-8bbb-502098f6db86" Version="V3">
-                                                <uix:NCheckState.IfExists>
-                                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,333" sap2010:WorkflowViewState.IdRef="Sequence_379">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SKU'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="388,243" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="8cbc71ac-ac97-459c-8bbb-502098f6db86" Text="[SKU + &quot;[k(Enter)]&quot;]" Timeout="10" Version="V3">
-                                                      <uix:NTypeInto.Target>
-                                                        <uix:TargetAnchorable DesignTimeRectangle="579, 175, 125, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='transactionDetailsPanel' /&gt;&lt;wnd ctrlname='dgTransactionItems' /&gt;&lt;wnd cls='WindowsForms10.RichEdit20W.*' /&gt;" Guid="723d7c42-7085-448e-bd2a-089b27206164" InformativeScreenshot="8fb8ff2441ecab2892bbaaec696e987e.png" ScopeSelectorArgument="&lt;wnd app='prioriposgui.exe' ctrlname='TransactionForm' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                                          <uix:TargetAnchorable.Anchors>
-                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                              <uix:Target CVScreenId="82db5ff8-56d1-4809-9cd8-d38a923ac6cf" CvTextArea="624, 147, 36, 18" CvTextArgument="U&quot;7" CvType="Text" DesignTimeRectangle="624, 147, 36, 18" ElementType="Text" Guid="0508fc24-eea4-4d4c-b4d6-817f0d3291cd" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                                            </scg:List>
-                                                          </uix:TargetAnchorable.Anchors>
-                                                        </uix:TargetAnchorable>
-                                                      </uix:NTypeInto.Target>
-                                                    </uix:NTypeInto>
-                                                  </Sequence>
-                                                </uix:NCheckState.IfExists>
-                                                <uix:NCheckState.IfNotExists>
-                                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_380">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Throw Exception="[new SystemException(&quot;לא נכנס לעמוד 'מקט'&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_91" />
-                                                  </Sequence>
-                                                </uix:NCheckState.IfNotExists>
-                                                <uix:NCheckState.Target>
-                                                  <uix:TargetAnchorable CVScreenId="d9427d69-f5de-42e9-a023-9beac8b6fdd5" CvTextArea="465, 151, 37, 11" CvTextArgument="Tian" CvType="Text" DesignTimeRectangle="465, 151, 37, 11" DesignTimeScaleFactor="1" ElementType="Text" Guid="7c86e042-8ce8-4b1d-a7b7-280868201817" InformativeScreenshot="37a452bbb1d3c873364a6cd6d92a3355.png" ScopeSelectorArgument="&lt;wnd app='prioriposgui.exe' ctrlname='TransactionForm' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
-                                                </uix:NCheckState.Target>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </uix:NCheckState>
-                                            </Sequence>
-                                          </ui:CommentOut.Body>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:CommentOut>
                                         <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_46">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[OrderNumber]</OutArgument>
@@ -1028,7 +912,7 @@
                                             <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Order Number").ToString]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,175" sap2010:WorkflowViewState.IdRef="LogMessage_87" Level="Info" Message="[&quot;Order Number: &quot;+OrderNumber]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,175" sap2010:WorkflowViewState.IdRef="LogMessage_87" Level="Info" Message="[&quot;מספר הזמנה: &quot;+OrderNumber]" />
                                         <If Condition="[OrderNumber.Contains(&quot;SO&quot;)]" sap:VirtualizedContainerService.HintSize="626,706" sap2010:WorkflowViewState.IdRef="If_46">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1598,7 +1482,7 @@
                                             <av:Size x:Key="ShapeSize">110,70</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Send SMS" sap:VirtualizedContainerService.HintSize="1212,5671" sap2010:WorkflowViewState.IdRef="Sequence_327">
+                                        <Sequence DisplayName="Send SMS" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_327">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
