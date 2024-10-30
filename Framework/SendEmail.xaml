@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>849,2479</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>848,2486</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -152,7 +152,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="688,2414" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="688,2421" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="PasswordEmail" />
       <Variable x:TypeArguments="x:String" Name="UsernameEmail" />
@@ -173,7 +173,7 @@
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="LoginEmail" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="626,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[PasswordEmail]" Username="[UserNameEmail]" />
-    <If Condition="[io_StopProcess]" sap:VirtualizedContainerService.HintSize="626,555" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[io_StopProcess]" sap:VirtualizedContainerService.HintSize="626,556" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,20 +192,20 @@
               <OutArgument x:TypeArguments="x:String">[Subject]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">["כשל במספר הזמנה: "+in_TransactionItem.SpecificContent("Order Number").ToString+" והתהליך עצר עקב 3 כשלים רצופים"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["כשל במספר הזמנה: "+in_TransactionItem.SpecificContent("Order Number").ToString+" והתהליך עצר עקב 5 כשלים רצופים"]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Subject]</OutArgument>
             </Assign.To>
@@ -216,7 +216,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[io_BusinessException IsNot Nothing]" sap:VirtualizedContainerService.HintSize="626,903" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[io_BusinessException IsNot Nothing]" sap:VirtualizedContainerService.HintSize="626,908" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,13 +224,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[ExplanationFailure]</OutArgument>
             </Assign.To>
@@ -241,21 +241,21 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,542" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,545" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[io_SystemException IsNot Nothing]" sap:VirtualizedContainerService.HintSize="530,454" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[io_SystemException IsNot Nothing]" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[ExplanationFailure]</OutArgument>
                   </Assign.To>
@@ -266,7 +266,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -357,7 +357,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[ExplanationFailure]" DisplayName="Send SMTP Mail Message" Email="[UserNameEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="626,183" sap2010:WorkflowViewState.IdRef="SendMail_8" IgnoreCRL="False" IsBodyHtml="False" Port="587" SecureConnection="Auto" SecurePassword="[PasswordEmail]" Server="smtp.office365.com" Subject="[Subject]" To="[EmailReceiver]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[ExplanationFailure]" DisplayName="Send SMTP Mail Message" Email="[UserNameEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="626,184" sap2010:WorkflowViewState.IdRef="SendMail_8" IgnoreCRL="False" IsBodyHtml="False" Port="587" SecureConnection="Auto" SecurePassword="[PasswordEmail]" Server="smtp.office365.com" Subject="[Subject]" To="[EmailReceiver]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">[io_FilePath]</InArgument>
