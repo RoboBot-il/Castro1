@@ -155,9 +155,10 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[FailureCount=4 Or io_BusinessException.Message.Contains(&quot;בקשת האשראי נשלחה ולא התקבלה תגובה&quot;)]" sap:VirtualizedContainerService.HintSize="530,1172" sap2010:WorkflowViewState.IdRef="If_7">
+            <If Condition="[FailureCount=9]" sap:VirtualizedContainerService.HintSize="530,1172" sap2010:WorkflowViewState.IdRef="If_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,7 +172,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There are 5 Consecutive transaction that failed or network connection problem. The process is disabled&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;There are 10 Consecutive transaction that failed or network connection problem. The process is disabled&quot;]" />
                   <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_11">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[io_StopProcess]</OutArgument>
@@ -180,7 +181,7 @@
                       <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="StopProcess" DisplayName="Set Asset" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="434,217" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[True]" />
+                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="StopProcess" DisplayName="Set Asset" FolderPath="Shared/Cash Register" sap:VirtualizedContainerService.HintSize="434,217" sap2010:WorkflowViewState.IdRef="SetAsset_5" Value="[True]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -211,7 +212,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[FailureCount=4]" sap:VirtualizedContainerService.HintSize="530,1172" sap2010:WorkflowViewState.IdRef="If_9">
+            <If Condition="[FailureCount=9]" sap:VirtualizedContainerService.HintSize="530,1172" sap2010:WorkflowViewState.IdRef="If_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -225,7 +226,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;There are 5 Consecutive transaction that failed or network connection problem. The process is disabled&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;There are 10 Consecutive transaction that failed or network connection problem. The process is disabled&quot;]" />
                   <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[io_StopProcess]</OutArgument>

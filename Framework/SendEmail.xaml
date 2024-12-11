@@ -192,7 +192,7 @@
               <OutArgument x:TypeArguments="x:String">[Subject]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">["כשל במספר הזמנה: "+in_TransactionItem.SpecificContent("Order Number").ToString+" והתהליך עצר עקב 5 כשלים רצופים"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["כשל במספר הזמנה: "+in_TransactionItem.SpecificContent("Order Number").ToString+" והתהליך עצר עקב 10 כשלים רצופים"]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
